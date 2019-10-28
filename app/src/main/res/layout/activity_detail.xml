@@ -7,11 +7,11 @@
     android:layout_height="match_parent">
 
     <fragment
-        android:id="@+id/menuFragment"
-        android:name="id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.MenuFragment"
+        android:id="@+id/detailFragment"
+        android:name="id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.DetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_menu"
+        tools:layout="@layout/fragment_detail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

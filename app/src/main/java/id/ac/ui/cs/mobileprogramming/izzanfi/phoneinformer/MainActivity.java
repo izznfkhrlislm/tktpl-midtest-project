@@ -1,39 +1,40 @@
 package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.ui.main.SectionsPagerAdapter;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.DetailFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Communicable {
+
+    private boolean mIsDualPane = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        View fragmentDetailView = findViewById(R.id.detailFragment);
+        if (fragmentDetailView != null) {
+            mIsDualPane = fragmentDetailView.getVisibility() == View.VISIBLE;
+        }
+    }
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    @Override
+    public void displayDetails(String title, String description) {
+        if (mIsDualPane) {
+            //TODO: Implement dual pane view (for landscape)
+            DetailFragment detailFragment = (DetailFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.detailFragment);
+            detailFragment.displayDetails(title, description);
+        } else {
+            //TODO: Implement single pane view (for portrait)
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("title", title);
+            intent.putExtra("desc", description);
+            startActivity(intent);
+        }
     }
 }
