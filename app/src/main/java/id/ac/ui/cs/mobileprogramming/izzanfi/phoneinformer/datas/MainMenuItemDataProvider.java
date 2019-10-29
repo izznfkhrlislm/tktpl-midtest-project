@@ -8,15 +8,30 @@ public class MainMenuItemDataProvider {
 
     private static ArrayList<Integer> IMG_RESOURCES = new ArrayList<>(
         Arrays.asList(
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_foreground
+            R.drawable.round_smartphone_24,
+            R.drawable.round_memory_24,
+            R.drawable.round_battery_charging_full_24,
+            R.drawable.round_android_24,
+            R.drawable.round_settings_applications_24,
+            R.drawable.round_info_24
         )
+    );
+
+    private static ArrayList<String> MENU_ITEM_NAMES = new ArrayList<>(
+            Arrays.asList(
+                    "Phone Information",
+                    "CPU Information",
+                    "Battery Information",
+                    "System Information",
+                    "Settings",
+                    "About"
+            )
     );
 
     public static ArrayList<MainMenuItem> getDatas() {
         ArrayList<MainMenuItem> res = new ArrayList<>();
         for (int i = 0; i < IMG_RESOURCES.size(); i++) {
-            MainMenuItem item = new MainMenuItem(IMG_RESOURCES.get(i), "Menu item " + i, "Description");
+            MainMenuItem item = new MainMenuItem(IMG_RESOURCES.get(i), MENU_ITEM_NAMES.get(i), "Description");
             res.add(item);
         }
 

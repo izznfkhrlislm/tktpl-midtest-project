@@ -12,7 +12,8 @@
         android:name="id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.MenuFragment"
         android:layout_width="500px"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_menu"/>
+        tools:layout="@layout/fragment_menu"
+        />
 
 
     <fragment
