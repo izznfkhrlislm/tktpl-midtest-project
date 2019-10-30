@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity implements Communicable {
         super.onCreate(savedInstanceState);
         mIsDualPane = false;
         setContentView(R.layout.activity_main);
-        View fragmentDetailView = findViewById(R.id.detailMenuFragment);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements Communicable {
         mainActivityFt.replace(R.id.menuFragment, new MenuFragment());
         mainActivityFt.commit();
 
+        View fragmentDetailView = findViewById(R.id.detailMenuFragment);
         if (fragmentDetailView != null) {
             mIsDualPane = true;
         }
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements Communicable {
             //TODO: Implement dual pane view (for landscape)
             FragmentManager mainActivityFm = getSupportFragmentManager();
             FragmentTransaction mainActivityFt = mainActivityFm.beginTransaction();
-            mainActivityFt.replace(R.id.detailMenuFragment, new DetailFragment(title, description));
+            mainActivityFt.replace(R.id.detailMenuFragment, DetailFragment.newInstance(title, description));
             mainActivityFt.commit();
 
         } else {

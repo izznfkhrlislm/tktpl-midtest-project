@@ -14,27 +14,31 @@ import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.R;
 
 public class DetailFragment extends Fragment {
 
-    private String title;
-    private String description;
+    public DetailFragment() {
 
-    public DetailFragment(String title, String description) {
-        super();
-        this.title = title;
-        this.description = description;
+    }
+
+    public static DetailFragment newInstance(String title, String description) {
+        Bundle args = new Bundle();
+        args.putString("title", title);
+        args.putString("description", description);
+        DetailFragment fragment = new DetailFragment();
+        fragment.setArguments(args);
+
+        return fragment;
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        return inflater.inflate(R.layout.fragment_detail, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_detail, container, false);
+        TextView detailTitle = view.findViewById(R.id.textViewTitle);
+        detailTitle.setText(getArguments().getString("title"));
 
-    public void displayDetails() {
-        TextView detailTitle = getActivity().findViewById(R.id.textViewTitle);
-        detailTitle.setText(this.title);
+        TextView detailDescription = view.findViewById(R.id.textContent);
+        detailDescription.setText(getArguments().getString("description"));
 
-        TextView detailDescription = getActivity().findViewById(R.id.textContent);
-        detailDescription.setText(this.description);
+        return view;
     }
 
 }

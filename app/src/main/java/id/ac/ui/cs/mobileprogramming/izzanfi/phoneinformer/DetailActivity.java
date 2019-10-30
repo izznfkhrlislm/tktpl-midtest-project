@@ -22,7 +22,7 @@ public class DetailActivity extends AppCompatActivity {
 
         FragmentManager detailActivityFm = getSupportFragmentManager();
         FragmentTransaction detailActivityFt = detailActivityFm.beginTransaction();
-        detailActivityFt.replace(R.id.detailMenuFragment, new DetailFragment(detailTitle, detailDesc));
+        detailActivityFt.replace(R.id.detailFragment, DetailFragment.newInstance(detailTitle, detailDesc));
         detailActivityFt.commit();
     }
 }
