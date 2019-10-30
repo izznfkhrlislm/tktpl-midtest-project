@@ -7,20 +7,17 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <fragment
+    <FrameLayout
         android:id="@+id/menuFragment"
-        android:name="id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.MenuFragment"
         android:layout_width="500px"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_menu"
-        />
+        android:layout_height="match_parent">
+    </FrameLayout>
 
 
-    <fragment
+    <FrameLayout
         android:id="@+id/detailMenuFragment"
-        android:name="id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.DetailFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_detail" />
+        android:layout_height="match_parent">
+    </FrameLayout>
 
 </LinearLayout>
