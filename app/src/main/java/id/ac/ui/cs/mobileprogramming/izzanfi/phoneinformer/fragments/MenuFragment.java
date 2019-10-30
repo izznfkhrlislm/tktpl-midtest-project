@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,7 +31,9 @@ public class MenuFragment extends Fragment {
         RecyclerView recyclerView = rootView.findViewById(R.id.menuRecyclerView);
         System.out.println(MainMenuItemDataProvider.getDatas().isEmpty());
         RecyclerAdapter adapter = new RecyclerAdapter(getContext(), MainMenuItemDataProvider.getDatas());
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
 
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         manager.setOrientation(LinearLayoutManager.VERTICAL);

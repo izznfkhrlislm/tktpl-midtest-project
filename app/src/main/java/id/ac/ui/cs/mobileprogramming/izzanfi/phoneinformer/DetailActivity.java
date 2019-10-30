@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.DetailFragment;
 
@@ -18,8 +20,9 @@ public class DetailActivity extends AppCompatActivity {
         String detailTitle = detailActivityIntent.getStringExtra("title");
         String detailDesc = detailActivityIntent.getStringExtra("desc");
 
-        DetailFragment fragment = (DetailFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.detailFragment);
-        fragment.displayDetails(detailTitle, detailDesc);
+        FragmentManager detailActivityFm = getSupportFragmentManager();
+        FragmentTransaction detailActivityFt = detailActivityFm.beginTransaction();
+        detailActivityFt.replace(R.id.detailMenuFragment, new DetailFragment(detailTitle, detailDesc));
+        detailActivityFt.commit();
     }
 }
