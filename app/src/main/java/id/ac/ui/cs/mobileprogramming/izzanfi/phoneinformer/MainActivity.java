@@ -6,13 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.View;
 
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.DetailFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.MenuFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.PhoneInformationFragment;
 
 public class MainActivity extends AppCompatActivity implements Communicable {
-
+    private static final String TAG = "MainActivity";
     private boolean mIsDualPane;
 
     @Override
@@ -38,11 +40,30 @@ public class MainActivity extends AppCompatActivity implements Communicable {
 
     @Override
     public void displayDetails(String title, String description) {
+        Log.d(TAG, "title: " + title);
+        Log.d(TAG, "mIsDualPane: " + mIsDualPane);
         if (mIsDualPane) {
             //TODO: Implement dual pane view (for landscape)
             FragmentManager mainActivityFm = getSupportFragmentManager();
             FragmentTransaction mainActivityFt = mainActivityFm.beginTransaction();
-            mainActivityFt.replace(R.id.detailMenuFragment, DetailFragment.newInstance(title, description));
+
+            switch (title) {
+                case "Phone Information":
+                    mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
+                case "CPU Information":
+                    mainActivityFt.replace(R.id.detailMenuFragment, DetailFragment.newInstance(title, description));
+                case "Battery Information":
+                    mainActivityFt.replace(R.id.detailMenuFragment, DetailFragment.newInstance(title, description));
+                case "System Information":
+                    mainActivityFt.replace(R.id.detailMenuFragment, DetailFragment.newInstance(title, description));
+                case "Settings":
+                    mainActivityFt.replace(R.id.detailMenuFragment, DetailFragment.newInstance(title, description));
+                case "About":
+                    mainActivityFt.replace(R.id.detailMenuFragment, DetailFragment.newInstance(title, description));
+            }
+
+//            mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
+
             mainActivityFt.commit();
 
         } else {

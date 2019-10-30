@@ -29,7 +29,6 @@ public class MenuFragment extends Fragment {
 
     private void setupRecyclerView(View rootView) {
         RecyclerView recyclerView = rootView.findViewById(R.id.menuRecyclerView);
-        System.out.println(MainMenuItemDataProvider.getDatas().isEmpty());
         RecyclerAdapter adapter = new RecyclerAdapter(getContext(), MainMenuItemDataProvider.getDatas());
         recyclerView.setAdapter(adapter);
 
