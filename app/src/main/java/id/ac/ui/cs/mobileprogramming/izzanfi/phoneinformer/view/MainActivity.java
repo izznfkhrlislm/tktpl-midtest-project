@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer;
+package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,13 +10,14 @@ import androidx.fragment.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.AboutFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.BatteryInformationFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.CpuInformationFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.MenuFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.PhoneInformationFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.SettingsFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.SystemInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.R;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.AboutFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.BatteryInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.CpuInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.MenuFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.PhoneInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.SettingsFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.SystemInformationFragment;
 
 public class MainActivity extends AppCompatActivity implements Communicable {
     private static final String TAG = "MainActivity";

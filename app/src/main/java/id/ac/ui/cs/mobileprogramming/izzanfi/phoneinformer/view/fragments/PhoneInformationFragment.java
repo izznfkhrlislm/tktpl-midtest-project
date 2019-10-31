@@ -1,9 +1,11 @@
-package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments;
+package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,17 +13,17 @@ import androidx.fragment.app.Fragment;
 
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.R;
 
-public class SettingsFragment extends Fragment {
+public class PhoneInformationFragment extends Fragment {
 
-    public SettingsFragment() {
+    public PhoneInformationFragment() {
 
     }
 
-    public static SettingsFragment newInstance(String title, String description) {
+    public static PhoneInformationFragment newInstance(String title, String description) {
         Bundle args = new Bundle();
         args.putString("title", title);
         args.putString("description", description);
-        SettingsFragment fragment = new SettingsFragment();
+        PhoneInformationFragment fragment = new PhoneInformationFragment();
         fragment.setArguments(args);
 
         return fragment;
@@ -31,7 +33,10 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_phone_information, container, false);
+        TextView content = view.findViewById(R.id.phoneInformationFragmentContentText);
+        content.setText("Phone Manufacturer: " + Build.MODEL);
+
         return view;
     }
 }

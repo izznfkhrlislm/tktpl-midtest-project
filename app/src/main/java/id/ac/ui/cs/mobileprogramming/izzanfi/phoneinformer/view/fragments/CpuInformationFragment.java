@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments;
+package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

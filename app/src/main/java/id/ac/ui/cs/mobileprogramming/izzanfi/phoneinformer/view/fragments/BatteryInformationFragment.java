@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments;
+package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,17 +11,17 @@ import androidx.fragment.app.Fragment;
 
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.R;
 
-public class SystemInformationFragment extends Fragment {
+public class BatteryInformationFragment extends Fragment {
 
-    public SystemInformationFragment() {
+    public BatteryInformationFragment() {
 
     }
 
-    public static SystemInformationFragment newInstance(String title, String description) {
+    public static BatteryInformationFragment newInstance(String title, String description) {
         Bundle args = new Bundle();
         args.putString("title", title);
         args.putString("description", description);
-        SystemInformationFragment fragment = new SystemInformationFragment();
+        BatteryInformationFragment fragment = new BatteryInformationFragment();
         fragment.setArguments(args);
 
         return fragment;
@@ -31,7 +31,7 @@ public class SystemInformationFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fragment_system_information, container, false);
+        View view = inflater.inflate(R.layout.fragment_battery_information, container, false);
         return view;
     }
 }

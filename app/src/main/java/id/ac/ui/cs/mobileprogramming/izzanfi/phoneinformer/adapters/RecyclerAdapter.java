@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.Communicable;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.Communicable;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.R;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.datas.MainMenuItem;
 

@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer;
+package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,12 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.AboutFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.BatteryInformationFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.CpuInformationFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.PhoneInformationFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.SettingsFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.SystemInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.R;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.AboutFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.BatteryInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.CpuInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.PhoneInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.SettingsFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.fragments.SystemInformationFragment;
 
 public class DetailActivity extends AppCompatActivity {
 
