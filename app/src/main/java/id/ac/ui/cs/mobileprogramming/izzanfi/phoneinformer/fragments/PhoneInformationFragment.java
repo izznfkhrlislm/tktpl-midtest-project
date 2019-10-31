@@ -35,7 +35,7 @@ public class PhoneInformationFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_phone_information, container, false);
         TextView content = view.findViewById(R.id.phoneInformationFragmentContentText);
-        content.setText("Phone Manufacturer: " + Build.MODEL);
+        content.setText("Phone Info placeholder ");
 
         return view;
     }
