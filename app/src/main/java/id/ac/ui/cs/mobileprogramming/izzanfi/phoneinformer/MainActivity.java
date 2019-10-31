@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.BatteryInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.CpuInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.MenuFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.PhoneInformationFragment;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements Communicable {
             } else if (title.equals("CPU Information")) {
                 mainActivityFt.replace(R.id.detailMenuFragment, CpuInformationFragment.newInstance(title, description));
             } else if (title.equals("Batery Information")) {
-                mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
+                mainActivityFt.replace(R.id.detailMenuFragment, BatteryInformationFragment.newInstance(title, description));
             } else if (title.equals("System Information")) {
                 mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
             } else if (title.equals("Settings")) {

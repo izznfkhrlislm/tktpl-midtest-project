@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.BatteryInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.CpuInformationFragment;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.DetailFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.PhoneInformationFragment;
 
 public class DetailActivity extends AppCompatActivity {
@@ -30,7 +30,7 @@ public class DetailActivity extends AppCompatActivity {
         } else if (title.equals("CPU Information")) {
             detailActivityFt.replace(R.id.detailFragment, CpuInformationFragment.newInstance(title, description));
         } else if (title.equals("Batery Information")) {
-            detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
+            detailActivityFt.replace(R.id.detailFragment, BatteryInformationFragment.newInstance(title, description));
         } else if (title.equals("System Information")) {
             detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
         } else if (title.equals("Settings")) {
