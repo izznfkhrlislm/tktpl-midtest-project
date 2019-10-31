@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.AboutFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.BatteryInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.CpuInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.PhoneInformationFragment;
@@ -39,7 +40,7 @@ public class DetailActivity extends AppCompatActivity {
             case "Settings":
                 detailActivityFt.replace(R.id.detailFragment, SettingsFragment.newInstance(title, description));
             case "About":
-                detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
+                detailActivityFt.replace(R.id.detailFragment, AboutFragment.newInstance(title, description));
         }
 
         detailActivityFt.commit();

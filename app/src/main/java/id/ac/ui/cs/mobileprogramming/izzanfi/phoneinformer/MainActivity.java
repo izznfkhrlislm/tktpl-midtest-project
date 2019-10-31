@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.AboutFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.BatteryInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.CpuInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.MenuFragment;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements Communicable {
                 case "Settings":
                     mainActivityFt.replace(R.id.detailMenuFragment, SettingsFragment.newInstance(title, description));
                 case "About":
-                    mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
+                    mainActivityFt.replace(R.id.detailMenuFragment, AboutFragment.newInstance(title, description));
             }
 
             mainActivityFt.commit();
