@@ -14,6 +14,7 @@ import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.BatteryInfo
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.CpuInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.MenuFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.PhoneInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.SettingsFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.SystemInformationFragment;
 
 public class MainActivity extends AppCompatActivity implements Communicable {
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements Communicable {
                 case "System Information":
                     mainActivityFt.replace(R.id.detailMenuFragment, SystemInformationFragment.newInstance(title, description));
                 case "Settings":
-                    mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
+                    mainActivityFt.replace(R.id.detailMenuFragment, SettingsFragment.newInstance(title, description));
                 case "About":
                     mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
             }
