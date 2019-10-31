@@ -14,6 +14,7 @@ import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.BatteryInfo
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.CpuInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.MenuFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.PhoneInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.SystemInformationFragment;
 
 public class MainActivity extends AppCompatActivity implements Communicable {
     private static final String TAG = "MainActivity";
@@ -57,18 +58,19 @@ public class MainActivity extends AppCompatActivity implements Communicable {
             FragmentManager mainActivityFm = getSupportFragmentManager();
             FragmentTransaction mainActivityFt = mainActivityFm.beginTransaction();
 
-            if (title.equals("Phone Information")) {
-                mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
-            } else if (title.equals("CPU Information")) {
-                mainActivityFt.replace(R.id.detailMenuFragment, CpuInformationFragment.newInstance(title, description));
-            } else if (title.equals("Batery Information")) {
-                mainActivityFt.replace(R.id.detailMenuFragment, BatteryInformationFragment.newInstance(title, description));
-            } else if (title.equals("System Information")) {
-                mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
-            } else if (title.equals("Settings")) {
-                mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
-            } else if (title.equals("About")) {
-                mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
+            switch (title) {
+                case "Phone Information":
+                    mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
+                case "CPU Information":
+                    mainActivityFt.replace(R.id.detailMenuFragment, CpuInformationFragment.newInstance(title, description));
+                case "Battery Information":
+                    mainActivityFt.replace(R.id.detailMenuFragment, BatteryInformationFragment.newInstance(title, description));
+                case "System Information":
+                    mainActivityFt.replace(R.id.detailMenuFragment, SystemInformationFragment.newInstance(title, description));
+                case "Settings":
+                    mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
+                case "About":
+                    mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
             }
 
             mainActivityFt.commit();

@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.BatteryInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.CpuInformationFragment;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.PhoneInformationFragment;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.fragments.SystemInformationFragment;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -25,18 +26,19 @@ public class DetailActivity extends AppCompatActivity {
         FragmentManager detailActivityFm = getSupportFragmentManager();
         FragmentTransaction detailActivityFt = detailActivityFm.beginTransaction();
 
-        if (title.equals("Phone Information")) {
-            detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
-        } else if (title.equals("CPU Information")) {
-            detailActivityFt.replace(R.id.detailFragment, CpuInformationFragment.newInstance(title, description));
-        } else if (title.equals("Batery Information")) {
-            detailActivityFt.replace(R.id.detailFragment, BatteryInformationFragment.newInstance(title, description));
-        } else if (title.equals("System Information")) {
-            detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
-        } else if (title.equals("Settings")) {
-            detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
-        } else if (title.equals("About")) {
-            detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
+        switch (title) {
+            case "Phone Information":
+                detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
+            case "CPU Information":
+                detailActivityFt.replace(R.id.detailFragment, CpuInformationFragment.newInstance(title, description));
+            case "Battery Information":
+                detailActivityFt.replace(R.id.detailFragment, BatteryInformationFragment.newInstance(title, description));
+            case "System Information":
+                detailActivityFt.replace(R.id.detailFragment, SystemInformationFragment.newInstance(title, description));
+            case "Settings":
+                detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
+            case "About":
+                detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
         }
 
         detailActivityFt.commit();
