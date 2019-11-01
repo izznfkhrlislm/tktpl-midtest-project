@@ -16,27 +16,27 @@ import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view.Communicable;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.R;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.datas.MainMenuItem;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class MainMenuAdapter extends RecyclerView.Adapter<MainMenuAdapter.MainMenuViewHolder> {
 
     private ArrayList<MainMenuItem> mainMenuItemList;
     private Context context;
 
-    public RecyclerAdapter(Context context, ArrayList<MainMenuItem> mainMenuItemList) {
+    public MainMenuAdapter(Context context, ArrayList<MainMenuItem> mainMenuItemList) {
         this.context = context;
         this.mainMenuItemList = mainMenuItemList;
     }
 
     @NonNull
     @Override
-    public RecyclerAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MainMenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View menuItemView = LayoutInflater.from(this.context)
                 .inflate(R.layout.card_item, parent, false);
 
-        return new MyViewHolder(menuItemView);
+        return new MainMenuViewHolder(menuItemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MainMenuViewHolder holder, int position) {
         MainMenuItem currentItem = mainMenuItemList.get(position);
         holder.setData(currentItem, position);
         holder.setMainMenuItemOnClickListener();
@@ -47,13 +47,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         return this.mainMenuItemList.size();
     }
 
-    // MyViewHolder: inner class
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    // MainMenuViewHolder: inner class
+    public static class MainMenuViewHolder extends RecyclerView.ViewHolder {
         private View menuItemView;
         private int position = 0;
         private MainMenuItem currentMainMenuItem;
 
-        public MyViewHolder(View menuItemView) {
+        public MainMenuViewHolder(View menuItemView) {
             super(menuItemView);
             this.menuItemView = menuItemView;
         }

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.R;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.adapters.RecyclerAdapter;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.adapters.MainMenuAdapter;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.datas.MainMenuItemDataProvider;
 
 public class MenuFragment extends Fragment {
@@ -28,7 +28,7 @@ public class MenuFragment extends Fragment {
 
     private void setupRecyclerView(View rootView) {
         RecyclerView recyclerView = rootView.findViewById(R.id.menuRecyclerView);
-        RecyclerAdapter adapter = new RecyclerAdapter(getContext(), MainMenuItemDataProvider.getDatas());
+        MainMenuAdapter adapter = new MainMenuAdapter(getContext(), MainMenuItemDataProvider.getDatas());
         recyclerView.setAdapter(adapter);
 
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
