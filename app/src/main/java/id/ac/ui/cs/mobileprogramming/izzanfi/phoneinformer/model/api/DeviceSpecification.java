@@ -1,8 +1,13 @@
 package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.api;
 
+import androidx.databinding.BaseObservable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class DeviceSpecification {
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.utils.ApiCallUtils;
+import retrofit2.Callback;
+
+public class DeviceSpecification extends BaseObservable {
 
     @SerializedName("Brand")
     private String brand;
@@ -41,47 +46,23 @@ public class DeviceSpecification {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
     public String getDeviceName() {
         return deviceName;
-    }
-
-    public void setDeviceName(String deviceName) {
-        this.deviceName = deviceName;
     }
 
     public String getChipset() {
         return chipset;
     }
 
-    public void setChipset(String chipset) {
-        this.chipset = chipset;
-    }
-
     public String getScreenSize() {
         return screenSize;
-    }
-
-    public void setScreenSize(String screenSize) {
-        this.screenSize = screenSize;
     }
 
     public String getScreenResolution() {
         return screenResolution;
     }
 
-    public void setScreenResolution(String screenResolution) {
-        this.screenResolution = screenResolution;
-    }
-
     public String getRamAndInternalStorageAmount() {
         return ramAndInternalStorageAmount;
-    }
-
-    public void setRamAndInternalStorageAmount(String ramAndInternalStorageAmount) {
-        this.ramAndInternalStorageAmount = ramAndInternalStorageAmount;
     }
 }

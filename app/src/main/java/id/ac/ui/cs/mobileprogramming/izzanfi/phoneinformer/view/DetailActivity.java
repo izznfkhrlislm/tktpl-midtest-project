@@ -29,19 +29,18 @@ public class DetailActivity extends AppCompatActivity {
         FragmentManager detailActivityFm = getSupportFragmentManager();
         FragmentTransaction detailActivityFt = detailActivityFm.beginTransaction();
 
-        switch (title) {
-            case "Phone Information":
-                detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
-            case "CPU Information":
-                detailActivityFt.replace(R.id.detailFragment, CpuInformationFragment.newInstance(title, description));
-            case "Battery Information":
-                detailActivityFt.replace(R.id.detailFragment, BatteryInformationFragment.newInstance(title, description));
-            case "System Information":
-                detailActivityFt.replace(R.id.detailFragment, SystemInformationFragment.newInstance(title, description));
-            case "Settings":
-                detailActivityFt.replace(R.id.detailFragment, SettingsFragment.newInstance(title, description));
-            case "About":
-                detailActivityFt.replace(R.id.detailFragment, AboutFragment.newInstance(title, description));
+        if (title.equals("Phone Information")) {
+            detailActivityFt.replace(R.id.detailFragment, PhoneInformationFragment.newInstance(title, description));
+        } else if (title.equals("CPU Information")) {
+            detailActivityFt.replace(R.id.detailFragment, CpuInformationFragment.newInstance(title, description));
+        } else if (title.equals("Battery Information")) {
+            detailActivityFt.replace(R.id.detailFragment, BatteryInformationFragment.newInstance(title, description));
+        } else if (title.equals("System Information")) {
+            detailActivityFt.replace(R.id.detailFragment, SystemInformationFragment.newInstance(title, description));
+        } else if (title.equals("Settings")) {
+            detailActivityFt.replace(R.id.detailFragment, SettingsFragment.newInstance(title, description));
+        } else if (title.equals("About")) {
+            detailActivityFt.replace(R.id.detailFragment, AboutFragment.newInstance(title, description));
         }
 
         detailActivityFt.commit();

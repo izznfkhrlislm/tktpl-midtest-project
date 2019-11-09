@@ -3,6 +3,7 @@ package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.view;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -61,19 +62,18 @@ public class MainActivity extends AppCompatActivity implements Communicable {
             FragmentManager mainActivityFm = getSupportFragmentManager();
             FragmentTransaction mainActivityFt = mainActivityFm.beginTransaction();
 
-            switch (title) {
-                case "Phone Information":
-                    mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
-                case "CPU Information":
-                    mainActivityFt.replace(R.id.detailMenuFragment, CpuInformationFragment.newInstance(title, description));
-                case "Battery Information":
-                    mainActivityFt.replace(R.id.detailMenuFragment, BatteryInformationFragment.newInstance(title, description));
-                case "System Information":
-                    mainActivityFt.replace(R.id.detailMenuFragment, SystemInformationFragment.newInstance(title, description));
-                case "Settings":
-                    mainActivityFt.replace(R.id.detailMenuFragment, SettingsFragment.newInstance(title, description));
-                case "About":
-                    mainActivityFt.replace(R.id.detailMenuFragment, AboutFragment.newInstance(title, description));
+            if (title.equals("Phone Information")) {
+                mainActivityFt.replace(R.id.detailMenuFragment, PhoneInformationFragment.newInstance(title, description));
+            } else if (title.equals("CPU Information")) {
+                mainActivityFt.replace(R.id.detailMenuFragment, CpuInformationFragment.newInstance(title, description));
+            } else if (title.equals("Battery Information")) {
+                mainActivityFt.replace(R.id.detailMenuFragment, BatteryInformationFragment.newInstance(title, description));
+            } else if (title.equals("System Information")) {
+                mainActivityFt.replace(R.id.detailMenuFragment, SystemInformationFragment.newInstance(title, description));
+            } else if (title.equals("Settings")) {
+                mainActivityFt.replace(R.id.detailMenuFragment, SettingsFragment.newInstance(title, description));
+            } else if (title.equals("About")) {
+                mainActivityFt.replace(R.id.detailMenuFragment, AboutFragment.newInstance(title, description));
             }
 
             mainActivityFt.commit();
