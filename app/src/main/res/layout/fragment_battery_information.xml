@@ -33,13 +33,79 @@
         app:layout_constraintVertical_bias="0.55"
         android:layout_marginTop="@dimen/activity_vertical_margin">
 
-        <TextView
-            android:id="@+id/batteryInformationFragmentContentText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Content goes here"
-            android:textSize="20sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/batteryInformationFragmentPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="Battery Percentage: "
+                    android:textStyle="bold"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/batteryInformationFragmentHealth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Health goes here"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/batteryInformationFragmentSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Source goes here"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/batteryInformationFragmentTechnology"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Technology goes here"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/batteryInformationFragmentTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Temperature goes here"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/batteryInformationFragmentVoltage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Battery Voltage goes here"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/batteryInformationFragmentCapacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Battery Capacity goes here"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
 
     </ScrollView>
 
