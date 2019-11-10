@@ -11,9 +11,7 @@ public class MainMenuItemDataProvider {
             R.drawable.round_smartphone_24,
             R.drawable.round_memory_24,
             R.drawable.round_battery_charging_full_24,
-            R.drawable.round_android_24,
-            R.drawable.round_settings_applications_24,
-            R.drawable.round_info_24
+            R.drawable.round_android_24
         )
     );
 
@@ -22,9 +20,7 @@ public class MainMenuItemDataProvider {
                     "Phone Information",
                     "CPU Information",
                     "Battery Information",
-                    "System Information",
-                    "Settings",
-                    "About"
+                    "System Information"
             )
     );
 

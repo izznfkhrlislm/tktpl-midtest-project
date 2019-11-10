@@ -2,15 +2,13 @@ package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.viewmodel;
 
 import android.app.Application;
 
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.local.DeviceSpecification;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.DeviceSpecification;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.repositories.DeviceSpecificationRepository;
 
 public class DeviceSpecificationViewModel extends ViewModel {

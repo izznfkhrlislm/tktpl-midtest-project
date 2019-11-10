@@ -8,7 +8,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.local.DeviceSpecification;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.DeviceSpecification;
 
 @Dao
 public interface DeviceSpecificationDao {

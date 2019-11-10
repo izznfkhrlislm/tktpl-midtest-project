@@ -1,11 +1,9 @@
 package id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.utils;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.util.List;
 
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.local.DeviceSpecification;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.CpuInfo;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.DeviceSpecification;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -39,6 +37,11 @@ public class ApiCallUtils {
 
         @GET("getdevice")
         Call<List<DeviceSpecification>> getDeviceSpecificationsByBrandAndDevice(
+                @Query("token") String token, @Query("brand") String brand,
+                @Query("device") String model);
+
+        @GET("getdevice")
+        Call<List<CpuInfo>> getCpuInfoByBrandAndDevice(
                 @Query("token") String token, @Query("brand") String brand,
                 @Query("device") String model);
     }

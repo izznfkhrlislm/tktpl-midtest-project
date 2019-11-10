@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.R;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.local.DeviceSpecification;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.DeviceSpecification;
 
 public class DeviceSpecificationAdapter extends RecyclerView.Adapter<DeviceSpecificationAdapter.DeviceSpecificationHolder> {
     private List<DeviceSpecification> deviceSpecifications;

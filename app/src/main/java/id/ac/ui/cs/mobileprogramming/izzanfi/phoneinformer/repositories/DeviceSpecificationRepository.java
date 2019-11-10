@@ -11,7 +11,7 @@ import java.util.List;
 
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.Dao.DeviceSpecificationDao;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.databases.DeviceSpecificationDatabase;
-import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.local.DeviceSpecification;
+import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.model.DeviceSpecification;
 import id.ac.ui.cs.mobileprogramming.izzanfi.phoneinformer.utils.ApiCallUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,13 +52,10 @@ public class DeviceSpecificationRepository {
         call.enqueue(new Callback<List<DeviceSpecification>>() {
             @Override
             public void onResponse(Call<List<DeviceSpecification>> call, Response<List<DeviceSpecification>> response) {
-                System.out.println("api call started!");
                 if (response.isSuccessful()) {
-                    Log.d("Response Body", response.body().toString());
-                    System.out.println(response.body().toString());
                     responseData.setValue(response.body());
                 } else {
-                    System.out.println("gagal");
+                    Log.e("Get From API", response.errorBody().toString());
                 }
             }
 
